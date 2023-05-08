@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Student__c Trigger">
+        <div class="slds-p-around_medium">
+            <lightning-card title="Trigger Creation">
+                <lightning-accordion>
+                    <lightning-accordion-section name="Trigger on the Student__c custom object">
+                        <p>The trigger should be created on the Student__c custom object.</p>
+                    </lightning-accordion-section>
+                    <lightning-accordion-section name="Trigger Fires on new Record Inserted">
+                        <p>The trigger should fire whenever a new record is inserted.</p>
+                    </lightning-accordion-section>
+                    <lightning-accordion-section name="Updates Mobile field with Phone Number">
+                        <p>The trigger should update the Mobile field with the phone number of the student.</p>
+                    </lightning-accordion-section>
+                    <lightning-accordion-section name="Only Updates if Mobile Field is empty or null">
+                        <p>The trigger should only update the Mobile field if it is empty or null.</p>
+                    </lightning-accordion-section>
+                    <lightning-accordion-section name="Does not update if Mobile Field already had a value">
+                        <p>The trigger should not update the Mobile field if it already has a value.</p>
+                    </lightning-accordion-section>
+                    <lightning-accordion-section name="Handle Bulk Insert Operations">
+                        <p>The trigger should handle bulk insert operations.</p>
+                    </lightning-accordion-section>
+                    <lightning-accordion-section name="No Performance Issues or Errors">
+                        <p>The trigger should not cause any performance issues or errors.</p>
+                    </lightning-accordion-section>
+                </lightning-accordion>
+            </lightning-card>
+        </div>
+    </lightning-card>
+</template>

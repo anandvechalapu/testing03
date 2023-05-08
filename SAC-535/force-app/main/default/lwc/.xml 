@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>46.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Student__c</object>
+            </objects>
+        </targetConfig>
+    </targetConfigs>
+    <masterDefinition>
+        <description>A custom trigger for the Student__c object to update the Mobile field with the phone number of the student.</description>
+        <remoteSiteSettings />
+        <isExposed>true</isExposed>
+        <targets>
+            <target>lightning__AppPage</target>
+            <target>lightning__RecordPage</target>
+            <target>lightning__HomePage</target>
+        </targets>
+        <targetConfigs>
+            <targetConfig targets="lightning__RecordPage">
+                <objects>
+                    <object>Student__c</object>
+                </objects>
+            </targetConfig>
+        </targetConfigs>
+    </masterDefinition>
+    <auraDefinitionBundle>
+        <components>
+            <component>
+                <aura:component implements="force:appHostable,flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,flexipage:availableForRecordPage">
+                    <aura:attribute name="student" type="Student__c" />
+                    
+                    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+                    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+                    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+                    
+                    <lightning:spinner aura:id="spinner" size="large" variant="brand" class="slds-hide"/>
+                </aura:component>
+            </component>
+        </components>
+    </auraDefinitionBundle>
+</LightningComponentBundle>
